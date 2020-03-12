@@ -20,6 +20,6 @@ def run_env(worker_id, roms_path):
 
 workers = 8
 # Environments must be created outside of the threads
-roms_path = "/home/zhangchao/Downloads/"  # Replace this with the path to your ROMs
+roms_path = "/home/zhangchao/Downloads/"
 threads = [Process(target=run_env, args=(i, roms_path)) for i in range(workers)]
 [thread.start() for thread in threads]

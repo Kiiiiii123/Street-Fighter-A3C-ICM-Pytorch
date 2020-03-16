@@ -12,6 +12,7 @@ class GlobalAdam(torch.optim.Adam):
                 state['step'] = torch.zeros(1)
                 state['exp_avg'] = torch.zeros_like(p.data)
                 state['exp_avg_sq'] = torch.zeros_like(p.data)
+                # 将底层内存移到共享内存中
                 state['step'].share_memory_()
                 state['exp_avg'].share_memory_()
                 state['exp_avg_sq'].share_memory_()
